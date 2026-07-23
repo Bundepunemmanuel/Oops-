@@ -1,37 +1,27 @@
-# Oops 😅 - Expo React Native App (TypeScript)
+# Oops — Next.js Web App
 
-A tiny, delight-first app for logging little mistakes — polished like a top App Store app.
+This repo now contains a Next.js web-first implementation of Oops 😅. The application is built with:
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion (for animations)
+- @lottiefiles/react-lottie-player (web Lottie)
+- react-confetti for celebration
+- localforage for persistent storage
 
 Quick start
-1. Install dependencies:
-   - npm install
-   - or yarn
-2. Start dev server:
-   - npx expo start
-   - or yarn start
-3. Open on device/emulator via Expo Go or simulator.
+1. Install dependencies
+   npm install
+2. Run dev
+   npm run dev
+3. Build for production
+   npm run build
+   npm run start
 
-Tech
-- Expo SDK (managed)
-- Expo Router
-- React Native + TypeScript
-- NativeWind (Tailwind)
-- Reanimated + Gesture Handler
-- Expo Haptics
-- AsyncStorage for local persistence
-- react-native-confetti-cannon for celebration
-- lottie-react-native for achievement animations
-
-Architecture
-- src/
-  - screens/ — app routes
-  - components/ — reusable UI pieces
-  - context/ — AppProvider, settings, XP system
-  - hooks/ — useStats, useDailySummary
-  - lib/ — storage and utils
-  - design/ — theme, constants
+Deploy on Vercel
+- Vercel detects Next.js automatically. Connect the repo and deploy the main branch.
+- Add a Lottie JSON file at public/animations/achievement.json for the achievement animation.
 
 Notes
-- Dark mode is the default UI. Settings allow toggling.
-- Data stored locally in AsyncStorage; can be replaced with remote storage by swapping the storage adapter in src/lib/storage.ts.
-- Replace placeholder assets in /assets to customize branding.
+- The original React Native / Expo code was replaced by a web-first Next.js app in main. If you need the native app preserved, let me know and I can restore it in a separate branch.
+- The app stores data locally in the browser using localforage. Switching to a remote backend (Supabase) is straightforward: replace the storage adapter.

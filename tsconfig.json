@@ -1,18 +1,1 @@
-{
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "jsx": "react-jsx",
-    "strict": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "allowJs": true,
-    "noEmit": true,
-    "isolatedModules": true,
-    "types": ["nativewind/types"]
-  },
-  "exclude": ["node_modules", "babel.config.js", "metro.config.js"]
-}
+{"compilerOptions":{"target":"ESNext","lib":["DOM","DOM.Iterable","ESNext"],"allowJs":true,"skipLibCheck":true,"esModuleInterop":true,"allowSyntheticDefaultImports":true,"strict":true,"forceConsistentCasingInFileNames":true,"module":"ESNext","moduleResolution":"Node","resolveJsonModule":true,"isolatedModules":true,"noEmit":true,"jsx":"react-jsx"},"include":["next-env.d.ts","**/*.ts","**/*.tsx"],"exclude":["node_modules"]}

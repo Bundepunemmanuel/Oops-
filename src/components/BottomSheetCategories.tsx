@@ -1,55 +1,24 @@
-import React from "react";
-import { Modal, View, Text, Pressable, FlatList } from "react-native";
-import { useApp } from "../context/AppProvider";
-import { Category } from "../context/types";
-import Animated, { FadeInUp } from "react-native-reanimated";
+'use client';
+import React from 'react';
+import { ACHIEVEMENTS } from '../data/achievements';
 
-const CATEGORIES: Category[] = [
-  "🤦 Forgot Something",
-  "📱 Tech Fail",
-  "💸 Money Mistake",
-  "💬 Awkward Moment",
-  "🚗 Driving",
-  "📚 School/Work",
-  "❤️ Relationship",
-  "🏠 Home",
-  "🛒 Shopping",
-  "😂 Other"
-];
-
-export default function BottomSheetCategories({ visible, onClose }: { visible: boolean; onClose: () => void }) {
-  const { addOops } = useApp();
-
-  const handleSelect = async (cat: Category) => {
-    await addOops(cat);
-    onClose();
-  };
-
+export default function BottomSheetCategories({ visible, onClose }:{ visible:boolean; onClose:()=>void }){
+  if(!visible) return null;
+  const CATEGORIES = [
+    '🤦 Forgot Something','📱 Tech Fail','💸 Money Mistake','💬 Awkward Moment','🚗 Driving','📚 School/Work','❤️ Relationship','🏠 Home','🛒 Shopping','😂 Other'
+  ];
   return (
-    <Modal visible={visible} animationType="slide" transparent statusBarTranslucent>
-      <View className="flex-1 justify-end bg-black/30">
-        <Animated.View entering={FadeInUp.duration(300)} className="bg-bg rounded-t-3xl p-6">
-          <View className="w-full items-center">
-            <View className="w-16 h-1.5 bg-white/10 rounded-full mb-3" />
-          </View>
-          <Text className="text-xl text-white font-semibold mb-4">What kind of Oops?</Text>
-          <FlatList
-            data={CATEGORIES}
-            keyExtractor={(i) => i}
-            renderItem={({ item }) => (
-              <Pressable onPress={() => handleSelect(item as Category)} className="py-3">
-                <Text className="text-white text-lg">{item}</Text>
-              </Pressable>
-            )}
-            ItemSeparatorComponent={() => <View className="h-[1px] bg-white/5 my-1" />}
-          />
-          <View className="mt-4">
-            <Pressable onPress={onClose} className="py-3 items-center">
-              <Text className="text-neutral-400">Cancel</Text>
-            </Pressable>
-          </View>
-        </Animated.View>
-      </View>
-    </Modal>
+    <div className="fixed inset-0 flex items-end justify-center bg-black/30">
+      <div className="bg-bg rounded-t-3xl w-full max-w-3xl p-6">
+        <div className="w-16 h-1.5 bg-white/10 rounded-full mb-3 mx-auto" />
+        <h3 className="text-xl text-white font-semibold mb-4">What kind of Oops?</h3>
+        <div className="space-y-2">
+          {CATEGORIES.map(c=> (
+            <button key={c} className="w-full text-left py-3 text-white" onClick={()=>{ /* emit via event system? For simplicity, we'll use a global custom event */ window.dispatchEvent(new CustomEvent('oops:add',{detail:c})); onClose(); }}>{c}</button>
+          ))}
+        </div>
+        <div className="mt-4 text-center"><button onClick={onClose} className="text-neutral-400">Cancel</button></div>
+      </div>
+    </div>
   );
 }
