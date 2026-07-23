@@ -1,0 +1,50 @@
+{
+  "name": "oops-app",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "lint": "eslint . --ext .ts,.tsx",
+    "build": "eas build --platform all"
+  },
+  "dependencies": {
+    "expo": "~48.0.0",
+    "expo-router": "^2.2.0",
+    "expo-haptics": "~12.0.0",
+    "@react-native-async-storage/async-storage": "^1.17.11",
+    "nativewind": "^2.0.11",
+    "tailwindcss": "^3.4.0",
+    "react": "18.2.0",
+    "react-native": "0.71.8",
+    "react-native-gesture-handler": "~2.9.0",
+    "react-native-reanimated": "~3.3.0",
+    "react-native-svg": "13.9.0",
+    "react-native-chart-kit": "^6.12.0",
+    "react-native-confetti-cannon": "^1.5.3",
+    "expo-av": "~13.0.0",
+    "expo-asset": "~8.8.0",
+    "expo-splash-screen": "~0.18.1",
+    "expo-application": "~5.0.0",
+    "expo-status-bar": "~1.4.2",
+    "@rneui/themed": "^4.0.0",
+    "expo-secure-store": "~12.0.0",
+    "lottie-react-native": "^5.1.4",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "~18.0.28",
+    "@types/react-native": "~0.71.6",
+    "typescript": "~5.1.6",
+    "babel-preset-expo": "~9.3.0",
+    "eslint": "^8.37.0",
+    "prettier": "^2.8.8",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-react": "^7.32.2",
+    "nativewind": "^2.0.11",
+    "tailwindcss": "^3.4.0"
+  }
+}
