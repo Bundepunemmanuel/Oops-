@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "expo": "~48.0.0",
-    "expo-router": "^2.2.0",
+    "expo-router": "latest",
     "expo-haptics": "~12.0.0",
     "@react-native-async-storage/async-storage": "^1.17.11",
     "nativewind": "^2.0.11",
