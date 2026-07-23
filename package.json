@@ -8,8 +8,11 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "build:web": "expo build:web",
+    "build": "expo build:web",
     "lint": "eslint . --ext .ts,.tsx",
-    "build": "eas build --platform all"
+    "build:prod": "expo export:web --output-dir web-build",
+    "build:eas": "eas build --platform all"
   },
   "dependencies": {
     "expo": "~48.0.0",
